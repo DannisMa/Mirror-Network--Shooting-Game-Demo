@@ -24,8 +24,8 @@ public class PlayerXRay : MonoBehaviour
             if(Physics.Raycast(ray, out hit))
             {
                 //Debug.Log(hit.collider.name);
-                print ("Point: "+hit.point.x+","+hit.point.y+","+hit.point.z);
-                //tc.BuildWall();
+                //print ("Point: "+hit.point.x+","+hit.point.y+","+hit.point.z);
+                tc.RiseTerrain(hit.point);
             }
         }
     }

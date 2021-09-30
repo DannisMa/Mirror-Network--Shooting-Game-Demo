@@ -21,11 +21,12 @@ public class ChangeTerrianHeight : MonoBehaviour {
     
     void changeTerrain(){
         //heights指的是在此terrian上的所有點的height數值，先初始擷取所有點
+        print(WidthTer);
         float[,] heights = theTerrain.terrainData.GetHeights(0 , 0 , WidthTer , HeightTer);
-        Debug.Log(WidthTer);
+        //Debug.Log(WidthTer);
 
-        heights = makeCircleHeights(heights , 100 , 100 , 50 , 10.0f / muti);
-        heights = makeCircleHeights(heights, 100, 100, 40, 0.0f / muti);
+        // heights = makeCircleHeights(heights , 100 , 100 , 50 , 10.0f / muti);
+        // heights = makeCircleHeights(heights, 100, 100, 40, 0.0f / muti);
         heights = makeRectangleHeights(heights, 50, 95, 90 , 10 , 10.0f / muti);
 
         theTerrain.terrainData.SetHeights(0,0,heights);
@@ -43,6 +44,7 @@ public class ChangeTerrianHeight : MonoBehaviour {
     }
 
     float[,] makeRectangleHeights(float[,] heights, int startX, int startZ , int theLong , int width , float setHeight){
+        print(startX+":"+startZ+":"+theLong+":"+width);
         for (int z = startZ; z < startZ + width; z++){
             for (int x = startX; x < startX + theLong; x++){
                 heights[x, z] = setHeight;
