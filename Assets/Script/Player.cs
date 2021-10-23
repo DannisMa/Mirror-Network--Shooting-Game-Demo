@@ -24,20 +24,18 @@ public class Player : Animal
     // Start is called before the first frame update
     public override void OnStartLocalPlayer()
     {
-        hp = Random.Range(10,100);
-        atk = 10;
+        hp = 100;
         moveSpeed = 4.0f;
         eye.SetActive(false);
         cc = this.GetComponent<CharacterController>();
         Camera.main.transform.SetParent(transform);
         Camera.main.transform.localPosition = new Vector3(0, 0, 0);
-        CmdSetUpPlayer(hp , atk);
+        CmdSetUpPlayer(hp);
     }
 
     [Command]
-    public void CmdSetUpPlayer(int _hp , int _atk){
+    public void CmdSetUpPlayer(int _hp ){
         hp = _hp;
-        atk = _atk;
     }
 
     // Update is called once per frame

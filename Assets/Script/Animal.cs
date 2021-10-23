@@ -5,8 +5,8 @@ using Mirror;
 public class Animal : NetworkBehaviour
 {
     [SyncVar(hook = nameof(OnHpChange))]
-    protected int hp;
-    protected int atk;
+    public int hp;
+    public int atk;
     protected float moveSpeed;
     
     public virtual void TakeDamage(int damage){}
